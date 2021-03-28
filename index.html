@@ -11,52 +11,99 @@
   
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         
-        <link rel="manifest" href="manifest.json">
+<!--         <link rel="manifest" href="manifest.json"> -->
         
         <title>Project 2</title>  
     </head>
+    
     <body>
-        <canvas></canvas>
+        
+        <canvas>
+        </canvas>
         
         <script>
+            let score = 0;
+            function drawScore() {
+                ctx.font = "16px Arial";
+                ctx.fillStyle = "#0095DD";
+                ctx.fillText("Score: "+score, 8, 20);
+            };
+            drawScore();
+            
             let img = new Image();
-            img.src = "spritesheet.png";
+            img.src = "ddoggo.png"
+            
+            let img1 = new Image();
+            img1.src = "fence.png"
+            
+            let img2 = new Image();
+            img2.src = "Dog_biscuit.png"
+            
             let c = document.querySelector("canvas");
             
-            c.style.backgroundColor = "silver";
+            c.style.backgroundColor = "green";
             c.width = 500;
             c.height = 500;
             let ctx = c.getContext("2d");
             
+
             img.addEventListener("load", (event) => {
                 spriteH = img.height;
-                spriteW = img.width/10;
+                spriteW = spriteH + 4;
                 
                 draw();
-            })
+                
+            });
+            
+            img1.addEventListener("load", (event) => {
+                spriteH1 = img1.height;
+                spriteW1 = img1.width;
+                draw();
+                
+            });
+            
+            img2.addEventListener("load", (event) => {
+                spriteH2 = img2.height;
+                spriteW2 = img2.width;
+                draw();
+                
+            });
             
             
        
-            let numImages = 10;
+            let numImages = 3;
             let currentImageIndex = 0;
             let frames = 0;
-            
+           
             let draw = () => {
-                ctx.clearRect(0,0,c.width,c.height);
                 
-                currentImageIndex = currentImageIndex == 9  ? 0 : currentImageIndex += 1;
-        
-                ctx.drawImage(img, spriteW * currentImageIndex, 0, spriteW, spriteH, 50, 50, spriteW, spriteH);
-                
-                
-                window.requestAnimationFrame(draw);
-            }
+                frames += 1;
+
+                if(frames % 14 == 0){
+                    
+                    ctx.clearRect(20,200,img.width,img.height);
+                    
+                    currentImageIndex = (currentImageIndex == 2)  ? 0 : currentImageIndex += 1;
+                    
+                    ctx.drawImage(img1, 0, 0, spriteW1, spriteH1, 450, 235, spriteW1+10, spriteH1+10);
+                    
+                    ctx.drawImage(img2, 0, 0, spriteW2, spriteH2, 440, 335, 50, 50);
+                    
+                    ctx.drawImage(img, spriteW * currentImageIndex, 0, spriteW, spriteH, 20, 200, spriteW, spriteH);
+                    
+                    };
+
+                window.requestAnimationFrame(draw); 
+                };
+            
+            
+
             
             
             
         </script>
         
-        <script>
+<!--         <script>
   if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
     navigator.serviceWorker.register('/servicew.js').then(function(registration) {
@@ -69,6 +116,6 @@
   });
 }
 
-        </script>
+        </script> -->
     </body>
 </html>
