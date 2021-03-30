@@ -1,51 +1,3 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-  
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        
-        <link rel="manifest" href="manifest.json">
-        
-        <script src="myscripts.js"></script>
-        
-        <title>Project 2</title>  
-        
-        <style>
-            canvas {
-                background: url('green.jpg'); no-repeat center center fixed;
-                background-size: cover;
-                height: 100%;
-                
-            };
-                
-            
-          
-            
-            
-        </style>
-        
-        <div>
-            In the game, you will have to create your own record by picking up dog treats and not crashing into the fences.
-            Use the arrow keys of the keyboard to guide the dog. The speed and number of fences will be incremented within each level. 
-        </div>
-        
-    </head>
-    
-    <body>
-        
-        <canvas>
-        </canvas>
-        
-        <script>
-            
-            
 //          SETTING img's destination...   
             
             let img = new Image();
@@ -64,8 +16,8 @@
             let c = document.querySelector("canvas");
     
 
-            c.width = 500;
-            c.height = 500;
+            c.width = window.500;
+            c.height = window.500;
             let ctx = c.getContext("2d");
             
 
@@ -275,26 +227,3 @@
      event.preventDefault();
      }, true);
             
-            
-
-            
-            
-            
-        </script>
-        
-        <script>
-  if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
-    navigator.serviceWorker.register('/servicew.js').then(function(registration) {
-      // Registration was successful
-      console.log('ServiceWorker registration successful with scope: ', registration.scope);
-    }, function(err) {
-      // registration failed :(
-      console.log('ServiceWorker registration failed: ', err);
-    });
-  });
-}
-
-        </script>
-    </body>
-</html>
