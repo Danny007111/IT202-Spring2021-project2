@@ -16,8 +16,8 @@
             let c = document.querySelector("canvas");
     
 
-            c.width = window.500;
-            c.height = window.500;
+            c.width = window.innerWidth;
+            c.height = window.innerHeight;
             let ctx = c.getContext("2d");
             
 
@@ -100,12 +100,12 @@
             
            
             
-            let collides = (a, b) => {
-                if (a.x < b.x + b.width &&
-                 a.x + a.width > b.x &&
-                 a.y < b.y + b.height &&
-                 a.y + a.height > b.y) return true;
-            };
+            // let collides = (a, b) => {
+            //     if (a.x < b.x + b.width &&
+            //      a.x + a.width > b.x &&
+            //      a.y < b.y + b.height &&
+            //      a.y + a.height > b.y) return true;
+            // };
 
                 
                 

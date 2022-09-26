@@ -1,5 +1,7 @@
 canvas {
-    background: url('green.jpg'); no-repeat center center fixed;
+    border: 1px solid black;
+    background: url('green.jpg');
+    
     background-size: cover;
     height: 100%;
 };
