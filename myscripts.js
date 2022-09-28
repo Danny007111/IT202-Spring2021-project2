@@ -1,27 +1,29 @@
 //          SETTING img's destination...   
             
-            let img = new Image();
-            img.src = "ddoggo.png"
+let img = new Image();
+img.src = "ddoggo.png"
             
-            let img1 = new Image();
-            img1.src = "fence.png"
+let img1 = new Image();
+img1.src = "fence.png"
             
-            let img2 = new Image();
-            img2.src = "Dog_biscuit.png"
+let img2 = new Image();
+img2.src = "Dog_biscuit.png"
             
+
             
             
 //          <canvas...          
             
-            let c = document.querySelector("canvas");
+let c = document.querySelector("canvas");
     
 
-            c.width = window.innerWidth;
-            c.height = window.innerHeight;
-            let ctx = c.getContext("2d");
-            
+c.width = window.innerWidth;
+c.height = window.innerHeight;
+let ctx = c.getContext("2d");
 
-            
+    
+/////////////////////////////////////////////////////////////////////////////////////////
+
 //             When page loads, img's load...
             
             
@@ -52,7 +54,7 @@
             
             
             ctx.font = "30px Arial";
-            ctx.fillText("Hello World", 10, 50);
+            ctx.fillText("Game loading...", 10, 50);
             
 
             

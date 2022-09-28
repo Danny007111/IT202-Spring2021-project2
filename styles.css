@@ -1,7 +1,19 @@
+
+
 canvas {
     border: 1px solid black;
     background: url('green.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
     
-    background-size: cover;
-    height: 100%;
+
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%);
+    position: absolute;
+
+    width:  276px;
+    height: 300px;
+    margin: 0;
 };
+
