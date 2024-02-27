@@ -1,19 +1,31 @@
-
+.D0gRun {
+    width: 100%;
+   text-align:center;
+}
 
 canvas {
-    border: 1px solid black;
+    display: inline;
+    /* width:  200px;
+    height: 200px;
+    margin: 0; */
+    /* height: 100%;
+    width: 100%;
+    text-align:center; */
+
+
+    border: 1px solid rgb(0, 0, 0);
     background: url('green.jpg');
     background-size: contain;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     
 
     left: 50% !important;
     top: 50% !important;
     transform: translate(-50%, -50%);
-    position: absolute;
+    position: fixed;
 
-    width:  276px;
-    height: 300px;
-    margin: 0;
+    
 };
+
+
 

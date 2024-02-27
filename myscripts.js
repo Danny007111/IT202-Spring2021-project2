@@ -1,38 +1,25 @@
-//          SETTING img's destination...   
-            
+//          SETTING img's destination...          
 let img = new Image();
-img.src = "ddoggo.png"
-            
+img.src = "./ddoggo.png"
+            console.log("loaded");
 let img1 = new Image();
 img1.src = "fence.png"
             
 let img2 = new Image();
 img2.src = "Dog_biscuit.png"
             
-
-            
-            
-//          <canvas...          
-            
+//          <canvas...            
 let c = document.querySelector("canvas");
-    
-
 c.width = window.innerWidth;
 c.height = window.innerHeight;
 let ctx = c.getContext("2d");
 
-    
 /////////////////////////////////////////////////////////////////////////////////////////
-
-//             When page loads, img's load...
-            
-            
-            
-            
+//             When page loads, img's load...                 
             img.addEventListener("load", (event) => {
                 spriteH = img.height;
                 spriteW = spriteH + 4;
-                
+                console.log("page is fully loaded");
                 draw();
                 
             });
@@ -41,7 +28,6 @@ let ctx = c.getContext("2d");
                 spriteH1 = img1.height;
                 spriteW1 = img1.width;
                 draw();
-                
                 
             });
             
@@ -52,24 +38,19 @@ let ctx = c.getContext("2d");
                 
             });
             
-            
             ctx.font = "30px Arial";
             ctx.fillText("Game loading...", 10, 50);
             
-
-            
 //            Image Variables
-          
+//////////////////////////////////////////////////////////////////////
             //Main drawing (dog)
-            let y1 = 200
+            let y1 = 100
             let x1 = 20
-            
             
             //Side spanner
             
             let itemSide = [-10, 100, 210, 320, 430];
             let xval = [80, 120, 190, 200, 240]
-            
             
             function random_item(items){
                 return items[Math.floor(Math.random()*items.length)];
@@ -83,21 +64,20 @@ let ctx = c.getContext("2d");
             
             let x3 = 480; // right side of canvas
             let y3 = random_item(itemSide);
-           
-            
-            let Score = 0;
-            let Lives = 0;
-            let Level = 1;
+             
+            // let Score = 0;
+            // let Lives = 0;
+            // let Level = 1;
             
             
 //             DRAWING
                  
             
-            let numImages = 3;
-            let currentImageIndex = 0;
-            let frames = 0;
-            let loop = 0;
-            let fences = [];
+            // let numImages = 3;
+            // let currentImageIndex = 0;
+            // let frames = 0;
+            // let loop = 0;
+            // let fences = [];
             
             
            
@@ -115,16 +95,11 @@ let ctx = c.getContext("2d");
             
             let draw = () => {
                 
-                
                 frames += 1;
                 x2 -= 1;
                 x3 -= 1;
                 
-                
-                
-                
                 if(frames % 17 == 0){
-                    
                     
                     ctx.clearRect(x1-200,y1-200,img.width*6,img.height*6);
                     
@@ -133,7 +108,6 @@ let ctx = c.getContext("2d");
                     ctx.clearRect(x3,y3,img2.width,img2.height);
                     
                     currentImageIndex = (currentImageIndex == 2)  ? 0 : currentImageIndex += 1;
-                   
 
                     //Dog object
                     
@@ -162,10 +136,7 @@ let ctx = c.getContext("2d");
                     }; 
                     
                     ctx.drawImage(img1, 0, 0, spriteW1, spriteH1, x2, y2, spriteW1+30, spriteH1+30);
-
-                    
-
-                    
+  
                     
                     if (x3 < -45){
                         x3 = 480;
@@ -176,19 +147,12 @@ let ctx = c.getContext("2d");
                     
                     
                 };
-                
-                    
-       
 
                 window.requestAnimationFrame(draw); 
                 };
             
-            
-            
-            
-          
-            
-            //                BUTTONS!
+//////////////////////////////////////////////////////////////////////////////////////////
+//                          BUTTONS!
             
             window.addEventListener("keydown", function (event) {
                 if (event.defaultPrevented) {
@@ -224,7 +188,7 @@ let ctx = c.getContext("2d");
                     default:
                         return; // Quit when this doesn't handle the key event.
   }
-
+//////////////////////////////////////////////////////////////////////////////////////////
   // Cancel the default action to avoid it being handled twice
      event.preventDefault();
      }, true);
