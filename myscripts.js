@@ -1,7 +1,7 @@
 //          SETTING img's destination...          
 let img = new Image();
 img.src = "./ddoggo.png"
-            console.log("loaded");
+            
 let img1 = new Image();
 img1.src = "fence.png"
             
@@ -19,7 +19,6 @@ let ctx = c.getContext("2d");
             img.addEventListener("load", (event) => {
                 spriteH = img.height;
                 spriteW = spriteH + 4;
-                console.log("page is fully loaded");
                 draw();
                 
             });
@@ -45,7 +44,7 @@ let ctx = c.getContext("2d");
 //////////////////////////////////////////////////////////////////////
             //Main drawing (dog)
             let y1 = 100
-            let x1 = 20
+            let x1 = 200
             
             //Side spanner
             
@@ -74,9 +73,9 @@ let ctx = c.getContext("2d");
                  
             
             // let numImages = 3;
-            // let currentImageIndex = 0;
-            // let frames = 0;
-            // let loop = 0;
+            let currentImageIndex = 0;
+            let frames = 0;
+            let loop = 0;
             // let fences = [];
             
             

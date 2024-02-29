@@ -1,6 +1,6 @@
 .D0gRun {
     width: 100%;
-   text-align:center;
+    text-align:center;
 }
 
 canvas {
@@ -19,12 +19,11 @@ canvas {
     background-repeat: repeat;
     
 
-    left: 50% !important;
-    top: 50% !important;
+    left: 50% ;
+    top: 50% ;
     transform: translate(-50%, -50%);
     position: fixed;
 
-    
 };
 
 
