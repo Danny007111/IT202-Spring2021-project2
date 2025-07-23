@@ -1,12 +1,12 @@
-//          SETTING img's destination...          
-let img = new Image();
-img.src = "./ddoggo.png"
+//          SETTING dog1's destination...          
+let dog1 = new Image();
+dog1.src = "./ddoggo.png"
             
-let img1 = new Image();
-img1.src = "fence.png"
+let fence1 = new Image();
+fence1.src = "fence.png"
             
-let img2 = new Image();
-img2.src = "Dog_biscuit.png"
+let biscuit1 = new Image();
+biscuit1.src = "Dog_biscuit.png"
             
 //          <canvas...            
 let c = document.querySelector("canvas");
@@ -15,24 +15,24 @@ c.height = window.innerHeight;
 let ctx = c.getContext("2d");
 
 /////////////////////////////////////////////////////////////////////////////////////////
-//             When page loads, img's load...                 
-            img.addEventListener("load", (event) => {
-                spriteH = img.height;
+//             When page loads, dog1's loads...                 
+            dog1.addEventListener("load", (event) => {
+                spriteH = dog1.height;
                 spriteW = spriteH + 4;
                 draw();
                 
             });
             
-            img1.addEventListener("load", (event) => {
-                spriteH1 = img1.height;
-                spriteW1 = img1.width;
+            fence1.addEventListener("load", (event) => {
+                spriteH1 = fence1.height;
+                spriteW1 = fence1.width;
                 draw();
                 
             });
             
-            img2.addEventListener("load", (event) => {
-                spriteH2 = img2.height;
-                spriteW2 = img2.width;
+            biscuit1.addEventListener("load", (event) => {
+                spriteH2 = biscuit1.height;
+                spriteW2 = biscuit1.width;
                 draw();
                 
             });
@@ -47,7 +47,7 @@ let ctx = c.getContext("2d");
             let x1 = 200
             
             //Side spanner
-            
+            // ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             let itemSide = [-10, 100, 210, 320, 430];
             let xval = [80, 120, 190, 200, 240]
             
@@ -100,17 +100,17 @@ let ctx = c.getContext("2d");
                 
                 if(frames % 17 == 0){
                     
-                    ctx.clearRect(x1-200,y1-200,img.width*6,img.height*6);
+                    ctx.clearRect(x1-200,y1-200,dog1.width*6,dog1.height*6);
                     
-                    ctx.clearRect(x2,y2,img1.width,img1.height);
+                    ctx.clearRect(x2,y2,fence1.width,fence1.height);
                     
-                    ctx.clearRect(x3,y3,img2.width,img2.height);
+                    ctx.clearRect(x3,y3,biscuit1.width,biscuit1.height);
                     
                     currentImageIndex = (currentImageIndex == 2)  ? 0 : currentImageIndex += 1;
 
                     //Dog object
                     
-                    ctx.drawImage(img, spriteW * currentImageIndex, 0, spriteW, spriteH, x1, y1, spriteW, spriteH);
+                    ctx.drawImage(dog1, spriteW * currentImageIndex, 0, spriteW, spriteH, x1, y1, spriteW, spriteH);
                     
                     if(x1 < 0){    
                         x1 = 20;
@@ -134,7 +134,7 @@ let ctx = c.getContext("2d");
                         
                     }; 
                     
-                    ctx.drawImage(img1, 0, 0, spriteW1, spriteH1, x2, y2, spriteW1+30, spriteH1+30);
+                    ctx.drawImage(fence1, 0, 0, spriteW1, spriteH1, x2, y2, spriteW1+30, spriteH1+30);
   
                     
                     if (x3 < -45){
@@ -142,7 +142,7 @@ let ctx = c.getContext("2d");
                         y3 = random_item(itemSide);
                     };
                     
-                   ctx.drawImage(img2, 0, 0, spriteW2, spriteH2, x3, (y3) + 30, 50, 50);
+                   ctx.drawImage(biscuit1, 0, 0, spriteW2, spriteH2, x3, (y3) + 30, 50, 50);
                     
                     
                 };
