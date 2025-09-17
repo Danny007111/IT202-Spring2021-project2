@@ -15,10 +15,10 @@ c.height = window.innerHeight;
 let ctx = c.getContext("2d");
 
 // Lane positions
-let itemSide = [-10, 100, 210, 320, 430]; // y-values for lanes
+let itemSide = [0, 190, 370, 570, 770]; // y-values for lanes
 const moveX = 70;
 const minX = 0;
-const maxX = 400;
+const maxX = 800;
 
 // Dog position (starts in lane 1)
 let x1 = 200;
@@ -55,13 +55,13 @@ function random_item(items) {
 // Main draw loop
 function draw() {
     frames += 1;
-    x2 -= 1;
-    x3 -= 1;
+    x2 -= 3;
+    x3 -= 3;
 
-    if (frames % 17 === 0) {
+    if (frames % 10 === 0) {
         ctx.clearRect(0, 0, c.width, c.height);
 
-        drawGrassLanes();
+        // drawGrassLanes();
 
         currentImageIndex = (currentImageIndex === 2) ? 0 : currentImageIndex + 1;
 
